@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Attendance System</title>
+{% load static %}
+  <link rel="stylesheet" href="{% static '/year1bba.css/'%}">
+</head>
+<body>
+<div>
+    <h1 id="h1">Student Attendance System</h1>
+</div>
+<div class="container">
+<div>   
+<button class="b33">Home</button>
+<button class="b3">Course</button>
+<a href="/select"><button class="b3">Attendance</button></a>
+<button class="b4">Logout</button> 
+</div>
+</div>
+<form method="POST">
+    {%csrf_token%}
+<h1>BBA Students</h1>
+<table style="width: 100%;
+border-collapse: collapse;
+border: 2px solid #ddd;
+background-color: #fff;">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+            <th>11</th>
+            <th>12</th>
+            <th>13</th>
+            <th>14</th>
+            <th>15</th>
+           
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+       
+        <tr>
+            <td id="studentName">{{ student.name }}</td>
+            <td>
+                <input type="radio" name="{{ student.id }}_attendance" value="P" required>P
+                <input type="radio" name="{{ student.id }}_attendance" value="A" required>A
+            </td>
+            <td>
+                <input type="radio" name="{{ student.id }}_attendance" value="P" required>P
+                <input type="radio" name="{{ student.id }}_attendance" value="A" required>A
+            </td>
+            <td>
+                <input type="radio" name="{{ student.id }}_attendance" value="P" required>P
+                <input type="radio" name="{{ student.id }}_attendance" value="A" required>A
+            </td>
+            <td>
+                <input type="radio" name="{{ student.id }}_attendance" value="P" required>P
+                <input type="radio" name="{{ student.id }}_attendance" value="A" required>A
+            </td>
+            <td>
+                <input type="radio" name="{{ student.id }}_attendance" value="P" required>P
+                <input type="radio" name="{{ student.id }}_attendance" value="A" required>A
+            </td>
+            <td>
+                <input type="radio" name="{{ student.id }}_attendance" value="P" required>P
+                <input type="radio" name="{{ student.id }}_attendance" value="A" required>A
+            </td>
+            <td>
+                <input type="radio" name="{{ student.id }}_attendance" value="P" required>P
+                <input type="radio" name="{{ student.id }}_attendance" value="A" required>A
+            </td>
+            <td>
+                <input type="radio" name="{{ student.id }}_attendance" value="P" required>P
+                <input type="radio" name="{{ student.id }}_attendance" value="A" required>A
+            </td>
+            <td>
+                <input type="radio" name="{{ student.id }}_attendance" value="P" required>P
+                <input type="radio" name="{{ student.id }}_attendance" value="A" required>A
+            </td>
+            <td>
+                <input type="radio" name="{{ student.id }}_attendance" value="P" required>P
+                <input type="radio" name="{{ student.id }}_attendance" value="A" required>A
+            </td>
+            <td>
+                <input type="radio" name="{{ student.id }}_attendance" value="P" required>P
+                <input type="radio" name="{{ student.id }}_attendance" value="A" required>A
+            </td>
+            <td>
+                <input type="radio" name="{{ student.id }}_attendance" value="P" required>P
+                <input type="radio" name="{{ student.id }}_attendance" value="A" required>A
+            </td>
+            <td>
+                <input type="radio" name="{{ student.id }}_attendance" value="P" required>P
+                <input type="radio" name="{{ student.id }}_attendance" value="A" required>A
+            </td>
+            <td>
+              <input type="radio" name="{{ student.id }}_attendance" value="P" required>P
+              <input type="radio" name="{{ student.id }}_attendance" value="A" required>A
+          </td>
+          <td>
+              <input type="radio" name="{{ student.id }}_attendance" value="P" required>P
+              <input type="radio" name="{{ student.id }}_attendance" value="A" required>A
+          </td>
+        </tr>
+     
+    {% endfor %}
+</tbody>
+</table> <div> <button id="saveButton" onclick="showMessage()">Save</button> </div> 
+</form> 
+<script>
+    function showMessage() {
+        // Initialize variables to count present and absent students
+        let presentStudents = 0;
+        let absentStudents = 0;
+        
+        // Get all radio buttons for attendance
+        const attendanceRadioButtons = document.querySelectorAll('input[type="radio"][name$="_attendance"]');
+    
+        // Loop through each attendance radio button
+        attendanceRadioButtons.forEach((radioButton) => {
+            if (radioButton.checked) {
+                if (radioButton.value === 'P') {
+                    presentStudents++;
+                } else if (radioButton.value === 'A') {
+                    absentStudents++;
+                }
+            }
+        });
+    
+        // Create a message with the report of present and absent students
+        const message = `Attendance Report:\n\nPresent Students: ${presentStudents}\nAbsent Students: ${absentStudents}`;
+    
+        // Display the message in a popup
+        alert(message);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color:beige;
+    color: #171616;
+    font-family: Arial, sans-serif;
+    }
+    #h1{
+        margin-top: -7px;
+        padding-top: 20px;
+        background-color:rgb(232, 212, 230);
+        text-align: center;
+        font-size: 3em;
+        height: 100px;
+        width: 1030;
+        /* margin-left: -10px; */
+    }
+    
+    .container {
+    background-color: #1e90ff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: -50px;
+    height: 35px;
+    
+    }
+    .b33{
+        color:black;
+        background-color: #1e90ff;
+       
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 16px;
+        margin: 10px;
+        cursor: pointer;
+    }
+    .b33:hover {
+        background-color: #00bfff;
+        }
+
+    
+    .b3 {
+    background-color: #1e90ff;
+    border: none;
+    color:black;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    }
+    
+    .b3:hover {
+    background-color: #00bfff;
+    }
+
+
+
+    .b4 {
+        background-color: #1e90ff;
+        border: none;
+        color: black;
+        padding: 10px 20px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        margin-left: 1000px;
+        cursor: pointer;
+        }
+        
+        .b4:hover {
+        background-color: #00bfff;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .tab1 {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #ddd;
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        input[type="radio"]:checked + label {
+            background-color: #4CAF50;
+            color: white;
+        }
+        input[type="radio"] + label {
+            padding: 5px 10px;
+            border-radius: 3px;
+            background-color: #e7e7e7;
+            cursor: pointer;
+        }
+        input[type="radio"]:hover + label {
+            background-color: #ddd;
+        }
+
+        
+          /* Style for the button */
+          .button {
+            padding: 10px 20px; /* Add padding around the button text */
+            background-color: #007bff; /* Blue background color */
+            color: #fff; /* White text color */
+            border: none; /* Remove button border */
+            border-radius: 5px; /* Add some rounded corners */
+            cursor: pointer; /* Change cursor to pointer on hover */
+          }
+          
+          /* Style for the button on hover */
+          button:hover {
+            background-color: #0056b3; /* Darker blue background color */
+          }

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    {% load static %}
+  <link rel="stylesheet" href="{% static '/Register.css/'%}">
+</head>
+<body>
+    <div>
+        <h1 id="h1">Student Attendance System</h1>
+      </div>
+
+      <div class="container1">
+        <div>   
+        <button class="b33">Home</button>
+        <a href="/course"><button class="b3">Course</button></a>
+        <a href="/select"><button class="b3">Attendance</button></a>
+        <button class="b4">Logout</button> 
+        </div>
+        </div>
+      <div>
+        <form method="POST"> 
+          {% csrf_token %}
+          <div id="form1">
+            <div class="form-group">
+              <label for="student-id">Student ID:</label>
+              <input name="student_id" type="text" id="student-id" required>
+            </div>
+            <div class="f1">
+              <label for="name">Name:</label>
+              <input name="name" type="text" id="name" required>
+            </div>
+            <div class="f3">
+              <label for="address">Address:</label>
+              <input name="address" type="text" id="address" required>
+            </div>
+          </div>
+        
+          <div id="form2">
+            <div class="f4">
+              <label for="gender">Gender:</label>
+              <select name="gender" id="gender" required>
+                <option value=""></option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="f5">
+              <label for="contact-no">Contact no.:</label>
+              <input name="contact_no" type="tel" id="contact-no" required>
+            </div>
+            <div class="f6">
+              <label for="course">Course:</label>
+              <input name="course" type="text" id="course" required>
+            </div>
+            <div class="f7">
+              <label for="date-of-birth">Date Of Birth:</label>
+              <input name="date_of_birth" type="date" id="date-of-birth" required>
+            </div>
+          </div>
+        
+          <div id="form3">
+            <div class="f8">
+              <label for="email">Email:</label>
+              <input name="email" type="email" id="email" required>
+            </div>
+            <div class="f9">
+              <label for="year">Year:</label>
+              <input name="year" type="number" id="year" required>
+            </div>
+          </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+        </form>
+        <table class="table1">
+          <thead>
+              <tr class="tablehead">
+                  <th>Student ID</th>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Gender</th>
+                  <th>Contact no.</th>
+                  <th>Course</th>
+                  <th>Date of birth</th>
+                  <th>Email</th>
+                  <th>Year</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+            {% for student in stdData %}
+            <tr class="tablebody">
+                <td>{{ student.student_id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.address }}</td>
+                <td>{{ student.gender }}</td>
+                <td>{{ student.contact_no }}</td>
+                <td>{{ student.course }}</td>
+                <td>{{ student.date_of_birth }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.year }}</td>
+                <td>
+                    <a href="/update-register/{{ student.id }}" class="success">Edit</a>
+                    <a href="/delete-register/{{ student.id }}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+        
+        
+</div>
+</body>
+</html> 
+</body>
+</html>
